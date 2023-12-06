@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventoController;
 
+Route::resource('eventos', EventoController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
