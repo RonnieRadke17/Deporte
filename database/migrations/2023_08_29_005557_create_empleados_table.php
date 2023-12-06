@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eventos', function (Blueprint $table) {
+        Schema::create('empleados', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre');
-            $table->string('Descripcion');
-            $table->date('Fecha');
-            $table->time('Hora');
-            $table->enum('Tipo',['Deportivo','Cultural']);
-            $table->enum('Lugar',['Polideportivo La Plata','Universidad Politécnica de Pachuca']);
-            $table->string('Foto');// si está bien
+            $table->string('ApellidoPaterno');
+            $table->string('ApellidoMaterno');
+            $table->string('Correo');
+            $table->string('Foto');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eventos');
+        Schema::dropIfExists('empleados');
     }
 };
